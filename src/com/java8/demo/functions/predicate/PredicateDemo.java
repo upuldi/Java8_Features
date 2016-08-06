@@ -7,6 +7,10 @@ import java.util.function.Predicate;
  */
 public class PredicateDemo {
 
+    //The following interface would be similar to the predicate interface
+    interface PredicateInterfaceDemo<T>{
+        boolean test(T t);
+    }
 
     /**
      * Predicates are used to test a condition,

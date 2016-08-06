@@ -7,9 +7,27 @@ import com.java8.demo.lambda.methodReferences.MethodReferenceDemo;
  */
 public class ConstructorReferenceDemo {
 
+    //This is the structure of the SomeObject
+/*    class SomeObject {
+        int x;
+        String y;
+
+        public SomeObject(int x, String y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public SomeObject(int x) {
+            this.x = x;
+        }
+    }*/
+
+
+    @FunctionalInterface
     public interface ObjectFactory {
         public SomeObject constructObject(int x);
     }
+
 
     public interface AnotherFactory {
         public SomeObject aMethodWhichInvokesAllArgumentConstructor(int x,String y);

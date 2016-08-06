@@ -22,6 +22,10 @@ public class SupplierDemo {
 
     //It just supply, in input parameters are needed...
     Supplier<Vehicle> getToyotaLimitedEdition = () -> new Vehicle("Toyota",555);
+
+    //This one invokes the default constructor. Constructor referencing is used here.
+    Supplier<Vehicle> getToyotaLimitedEdition2 = Vehicle::new;
+
     /* See here the supplier type is a list, if you want to return a list you have to expect a list */
     Supplier<List<Vehicle>> vehicleSupplier = () -> Arrays.asList(new Vehicle("Toyota", 100), new Vehicle("Honda", 200));
 
@@ -36,6 +40,9 @@ public class SupplierDemo {
     class Vehicle {
         String name;
         int price;
+
+        public Vehicle() {
+        }
 
         public Vehicle(String name, int price) {
             this.name = name;
