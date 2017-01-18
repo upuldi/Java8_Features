@@ -1,0 +1,1 @@
+This project contains some example use of Java8 new features.
