@@ -1,6 +1,5 @@
 package com.java8.demo.lambda.functionalInterfaces;
 
-import com.java8.demo.lambda.targetTyping.TargetTypingDemo;
 
 /**
  * Created by udoluweera on 8/1/16.

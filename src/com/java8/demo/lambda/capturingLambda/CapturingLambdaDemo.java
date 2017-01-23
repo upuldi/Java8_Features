@@ -10,6 +10,7 @@ public class CapturingLambdaDemo {
     /**
      * Lambdas provides various implementations for this functional interface
      */
+    @FunctionalInterface
     public interface TradeChecker {
         public boolean check(Trade trade);
     }
@@ -17,13 +18,14 @@ public class CapturingLambdaDemo {
 
     /**
      * First implementation of the Trade Checker.
+     *
      * @param trade
      */
     public void checkWhetherTheTradeIsStarted(Trade trade) {
         //Here you provide the implementation of the functional interface as a lambda and then you call that
         //Here you define the behaviour for checking a trade.
-        TradeChecker tradeCheckerByFieldValue = (Trade t) -> t.getStarted()?true:false;
-        if (tradeCheckerByFieldValue.check(trade) ) {
+        TradeChecker tradeCheckerByFieldValue = (Trade t) -> t.getStarted() ? true : false;
+        if (tradeCheckerByFieldValue.check(trade)) {
             System.out.println("Trade has been started....");
             System.out.println("Doing stuffs");
         } else {
@@ -34,7 +36,7 @@ public class CapturingLambdaDemo {
 
     /**
      * Second Implementation for the TradeChecker
-     *
+     * <p>
      * This is an example of a capturing lambda, a Lambda which uses a variable from the enclosing scope.
      * Capturing lambda can expand the functional interface to work with more parameters.
      *
@@ -42,16 +44,16 @@ public class CapturingLambdaDemo {
      */
     public void checkWhetherTheTradeHasGivenStatus(Trade trade, Boolean givenStatus) {
 
-        TradeChecker checkByField = (t) -> t.getStarted().equals(givenStatus) ? Boolean.TRUE:Boolean.FALSE;
+        TradeChecker checkByField = (t) -> t.getStarted().equals(givenStatus) ? Boolean.TRUE : Boolean.FALSE;
         boolean returnValue = checkByField.check(trade);
 
         System.out.println(" Trade has equal status as provided : " + returnValue);
 
         //The above is equal to
-        TradeChecker tradeCheckOldSchool= new TradeChecker(){
+        TradeChecker tradeCheckOldSchool = new TradeChecker() {
             @Override
             public boolean check(Trade trade) {
-                return trade.getStarted().equals(givenStatus)? Boolean.TRUE:Boolean.FALSE;
+                return trade.getStarted().equals(givenStatus) ? Boolean.TRUE : Boolean.FALSE;
             }
         };
         tradeCheckOldSchool.check(trade);
@@ -65,11 +67,11 @@ public class CapturingLambdaDemo {
      * @param status
      * @param quantity
      */
-    public void checkWhetherTheTradeHasGivenStatusAndQuantity(Trade trade, Boolean status, Integer quantity){
+    public void checkWhetherTheTradeHasGivenStatusAndQuantity(Trade trade, Boolean status, Integer quantity) {
 
         /* Defining the business logic to check a large trade, See you can dynamically define business logic with lambda */
-        TradeChecker checkForLargeTrades = (t) -> t.getStarted().equals(status) && t.getValue()> quantity ?
-                Boolean.TRUE:Boolean.FALSE;
+        TradeChecker checkForLargeTrades = (t) -> t.getStarted().equals(status) && t.getValue() > quantity ?
+                Boolean.TRUE : Boolean.FALSE;
         boolean returnVal = checkForLargeTrades.check(trade);
         System.out.println("Trade has the status checked and more than the checked quantity : " + returnVal);
     }
@@ -89,12 +91,12 @@ public class CapturingLambdaDemo {
     public static void main(String[] args) {
 
         CapturingLambdaDemo capturingLambdaDemo = new CapturingLambdaDemo();
-        Trade tradeOne = new Trade("Trade1",5000,Boolean.FALSE);
+        Trade tradeOne = new Trade("Trade1", 5000, Boolean.FALSE);
 
         capturingLambdaDemo.checkWhetherTheTradeIsStarted(tradeOne);
         capturingLambdaDemo.checkWhetherTheTradeHasGivenStatus(tradeOne, Boolean.FALSE);
-        capturingLambdaDemo.checkWhetherTheTradeHasGivenStatusAndQuantity(tradeOne,Boolean.FALSE,2000);
-        capturingLambdaDemo.checkWhetherTheTradeHasGivenStatusAndQuantity(tradeOne,Boolean.FALSE,24000);
+        capturingLambdaDemo.checkWhetherTheTradeHasGivenStatusAndQuantity(tradeOne, Boolean.FALSE, 2000);
+        capturingLambdaDemo.checkWhetherTheTradeHasGivenStatusAndQuantity(tradeOne, Boolean.FALSE, 24000);
 
         capturingLambdaDemo.mutation(tradeOne);
     }
