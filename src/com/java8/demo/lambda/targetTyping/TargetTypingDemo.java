@@ -6,22 +6,25 @@ package com.java8.demo.lambda.targetTyping;
 public class TargetTypingDemo {
 
 
+    @FunctionalInterface
     public interface EmailAddress {
         public String constructEmailAddress(String string);
     }
 
+    @FunctionalInterface
     public interface PostCode {
         public String constructPostCode(String string);
     }
 
+    @FunctionalInterface
     public interface FunctionalInterfaceWithNoInputParams {
         public String noInputParamsMethod();
     }
 
+    @FunctionalInterface
     public interface WithManyParams {
         public String manyParams(String string, Integer integerVal);
     }
-
 
     public String getEmailAddress(String uniqueId, EmailAddress emailAddress) {
         //Do some business logic to create an email using the inputs
