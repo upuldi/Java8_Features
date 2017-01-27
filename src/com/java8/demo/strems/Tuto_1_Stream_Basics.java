@@ -5,9 +5,7 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * Created by L078878 on 20/12/2016.
- */
+
 public class Tuto_1_Stream_Basics {
 
     public static void main(String[] args) {

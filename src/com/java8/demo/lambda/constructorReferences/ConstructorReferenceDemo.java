@@ -40,7 +40,7 @@ public class ConstructorReferenceDemo {
 
         //With referencing..
         ObjectFactory withReferencing = SomeObject::new;
-        //This above code will invoke the constructor with one argument as the ObjectFactory fnctional interface only
+        //This above code will invoke the constructor with one argument as the ObjectFactory functional interface only
         //accepts one argument
 
         //Even though this call is similar to the above line, this will calls the two argument constructor because of the

@@ -28,6 +28,5 @@ public class MultipleInheritenceWithSubInterfaces {
 
         TestClass tc = new MultipleInheritenceWithSubInterfaces().new TestClass();
         tc.method();
-
     }
 }

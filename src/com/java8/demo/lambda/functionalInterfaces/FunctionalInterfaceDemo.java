@@ -12,7 +12,7 @@ public class FunctionalInterfaceDemo {
     }
 
     /**
-     * See the method definition, It doesnt mutate the data, just pass to the functional interface
+     * See the method definition, It doesn't mutate the data, just pass to the functional interface
      */
     public int numberService(int x,int y, NumberCalculator numberCalculator) {
         return numberCalculator.calculate(x,y);

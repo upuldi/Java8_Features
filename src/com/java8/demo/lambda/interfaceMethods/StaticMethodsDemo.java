@@ -6,14 +6,14 @@ package com.java8.demo.lambda.interfaceMethods;
 public class StaticMethodsDemo {
 
     @FunctionalInterface
-    interface DefaultMethodDemoInterface {
+    interface StaticMethodsDemoInterface {
 
         public void usualFunctionalMethod(int x);
 
         /**
          * This is a default method, Functional Interfaces can have a default methods
          */
-        public static boolean someDefaultMethod(String x, String y) {
+        public static boolean someStaticMethod(String x, String y) {
             System.out.println("A static Method");
             return true;
         }
@@ -21,7 +21,7 @@ public class StaticMethodsDemo {
 
     public static void main(String[] args) {
 
-        boolean s = DefaultMethodDemoInterface.someDefaultMethod("A", "B");
+        boolean s = StaticMethodsDemoInterface.someStaticMethod("A", "B");
 
     }
 }
