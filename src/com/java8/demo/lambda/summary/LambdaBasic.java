@@ -62,6 +62,9 @@ public class LambdaBasic {
         //Definition of the type is not mandatory
         SomeFunctionalInterface moreElegantExpression  = (s) -> s.length() > 2 ? true:false;
 
+        //You can remove the braces as well
+        SomeFunctionalInterface moreElegantExpressionWithoutBraces  = s -> s.length() > 2 ? true:false;
+
         //Since there is only one method call
         SomeFunctionalInterface moreElegantExpressionWhenCallingSingleMethod  = UtilClass::checkMethod;
 

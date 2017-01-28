@@ -1,4 +1,4 @@
-package streams;
+package com.java8.demo.strems;
 
 import java.util.Arrays;
 import java.util.stream.DoubleStream;

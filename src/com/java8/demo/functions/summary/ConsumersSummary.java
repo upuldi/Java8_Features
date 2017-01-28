@@ -17,6 +17,11 @@ public class ConsumersSummary {
         Consumer<String> stringConsumer = (s) -> System.out.println("hello " + s + ".....");
         stringConsumer.accept("consumer");
 
+        //Also it can be written as this, this will just print it
+        Consumer<String> anotherPrintLine = System.out::println;
+        anotherPrintLine.accept("Some string to print....");
+
+
         Consumer<Integer> multiplyItBy10 = (i) -> System.out.println(i * 10);
         multiplyItBy10.accept(100);
 
