@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 public class PredicateDemo {
 
     //The following interface would be similar to the predicate interface
-    interface PredicateInterfaceDemo<T>{
+    interface PredicateInterfaceDemo<T> {
         boolean test(T t);
     }
 
@@ -18,8 +18,8 @@ public class PredicateDemo {
      * See how easy to provides any number of conditions.
      */
 
-    Predicate<Employee> executiveEmployee = (e) -> e.getSalary()>50000?true:false;
-    Predicate<Employee> seniorEmployee = (e) -> e.getId()<100?true:false;
+    Predicate<Employee> executiveEmployee = (e) -> e.getSalary() > 50000 ? true : false;
+    Predicate<Employee> seniorEmployee = (e) -> e.getId() < 100 ? true : false;
     Predicate<String> isEmptyString = (s) -> s.isEmpty();
 
     private void testLambda(Employee employee) {
@@ -31,7 +31,7 @@ public class PredicateDemo {
 
     public static void main(String[] args) {
 
-        Employee employee = new PredicateDemo().new Employee(99,75000);
+        Employee employee = new PredicateDemo().new Employee(99, 75000);
         new PredicateDemo().testLambda(employee);
     }
 

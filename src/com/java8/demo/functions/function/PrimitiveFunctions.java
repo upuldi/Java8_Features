@@ -28,7 +28,7 @@ public class PrimitiveFunctions {
     DoubleSupplier doubleSupplier = null;
 
     //Functions can be defined in many ways
-    //A typical function is defined as below. This function takes a Integer and reurns a SomeObject as the response
+    //A typical function is defined as below. This function takes a Integer and returns a SomeObject as the response
     Function<Integer,SomeReturnObject> someFunctionDefinition = null;
     // It can be defined as this,Here we only defined the return type as we know IntFunction take an primitive int as the input
     IntFunction<SomeReturnObject> sameFunctionWithPrimitiveInts = null;
