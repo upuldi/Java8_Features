@@ -78,8 +78,12 @@ public class StreamBasics_Creation {
         int primitiveStreamsDemoResult = primitiveStreamsDemo.mapToInt(String::length).sum();
         System.out.println(primitiveStreamsDemoResult);
 
+        /* You can transform an Object stream into a primitive stream and vise versa using mapToInt(), maptToLong() and mapToDouble() */
+        Stream.of("A1","A2","A3","A4").map(s -> s.substring(1)).mapToInt(Integer::parseInt).forEach(System.out::println);
+
+
         //Here mapToInt() converts it to an int stream
-        // IntStreams has sum() function witin itself, so no need of doing reduce()
+        // IntStreams has sum() function within itself, so no need of doing reduce()
 
 
     }
