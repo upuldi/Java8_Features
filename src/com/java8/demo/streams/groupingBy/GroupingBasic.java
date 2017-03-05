@@ -36,7 +36,7 @@ public class GroupingBasic {
                                 Collectors.groupingBy(s -> Character.isUpperCase(s.charAt(0))))
                         );
 
-        System.out.println(multiLevelGroupingResult);
+        System.out.println(" Multilevel Grouping : "+ multiLevelGroupingResult);
 
 
         //GroupingByCount example
@@ -50,6 +50,14 @@ public class GroupingBasic {
         System.out.println(itemCount);
 
 
+        //Partitioning by
+        /**
+         * Special case of grouping by,
+         * Convert the stream into a map based on provided predicate
+         */
+        Map<Boolean, List<String>> partRes = stringList.stream().collect(
+                Collectors.partitioningBy(s -> s.length() > 2));
+        System.out.println("Partitioning by res : " + partRes);
 
 
     }

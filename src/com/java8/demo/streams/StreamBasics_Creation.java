@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.DoubleStream;
@@ -37,6 +38,11 @@ public class StreamBasics_Creation {
         //Creating a stream of array
         String[] arrayOfStrings = {"A","B","C","D"};
         Stream<String> creatingAStreamWithAnArray = Stream.of(arrayOfStrings);
+
+        //Stream From Arrays - Arrays.stream()
+        String[] someArray = {"some","array","stream","using","array"};
+        Stream<String> streamFromArray =  Arrays.stream(someArray,2,4); //You can decide which part of the array should be considered when creating the streams
+        streamFromArray.forEach(System.out::println);
 
         //Stream from collection
         List<String> aListOfString = new ArrayList<>();

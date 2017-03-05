@@ -1,6 +1,6 @@
 package com.java8.demo.functions.consumer;
 
-import java.util.function.BiConsumer;
+import java.util.function.*;
 
 /**
  * Created by udoluweera on 8/8/16.

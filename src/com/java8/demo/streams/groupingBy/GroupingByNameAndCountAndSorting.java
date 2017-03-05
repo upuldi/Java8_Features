@@ -21,7 +21,9 @@ public class GroupingByNameAndCountAndSorting {
                         "apple", "orange", "banana", "papaya");
 
 
-        Map<String, Long> groupByNameResponse = items.stream().collect(Collectors.groupingBy(Function.identity(),
+        Map<String, Long> groupByNameResponse = items.stream().collect(
+                Collectors.groupingBy(
+                        Function.identity(),
                 Collectors.counting()));
         System.out.println(groupByNameResponse);
 

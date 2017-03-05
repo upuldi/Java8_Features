@@ -1,5 +1,6 @@
 package com.java8.demo.streams.groupingBy;
 
+import java.lang.ref.SoftReference;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
@@ -27,6 +28,15 @@ public class GroupingWithObj {
                 new Item("apple", 20, new BigDecimal("9.99"))
         );
 
+
+        /**
+         * you can use forEach() method in collections to iterate using a function
+         */
+        Map<String, List<Item>> groupByNameMap = items.stream().collect(Collectors.groupingBy(Item::getName));
+        /** You can pass a function to the forEach() method in Collection returned */
+        groupByNameMap.forEach( (name, list) -> System.out.printf(" Name : %s and No of Items are : %d \n",name, list.size() ));
+
+
         //Name vs count
         Map<String, Long> nameVsCount = items.stream().collect(Collectors.groupingBy(Item::getName, Collectors.counting()));
         System.out.println(nameVsCount);
@@ -49,6 +59,5 @@ public class GroupingWithObj {
         );
 
         System.out.println(priceVsName);
-
     }
 }

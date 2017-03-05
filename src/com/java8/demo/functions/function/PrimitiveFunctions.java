@@ -49,6 +49,13 @@ public class PrimitiveFunctions {
     LongToDoubleFunction longToDoubleFunction = null;//Primitive long to primitive double
     //Likewise there are many primitive converting functions....
 
+    /* To int function takes any input and returns a int where as IntFunction takes int and return any output*/
+    ToIntFunction<String> someIntReturnFunction  = (s) -> s.length(); //Here returns int accept anything
+    IntFunction<String> someIntFunction = (i) -> Integer.toString(i); //Here returns anything, accept int
+    IntUnaryOperator intUnaryOperator = (i) -> i*i; //Accept returns int only
+    IntBinaryOperator intBinaryOperation = (x,y) -> x*y; //Accept returns int only
+
+
 
     private void testEvenNumbers() {
         Boolean res = somePredicateWithIntegerInputToTestEvenNos.test(11);
