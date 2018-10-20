@@ -1,7 +1,5 @@
 package temp.practice;
 
-import jdk.nashorn.internal.objects.annotations.Function;
-
 public class DefaultAndStaticMethodDemo {
 
     @FunctionalInterface

@@ -45,17 +45,13 @@ public class FunctionDemo {
     }
 
     public static void main(String[] args) {
-
         new FunctionDemo().testAFunctionCall();
         new FunctionDemo().findMovie("Ring");
-
     }
 
 
     class Movie {
-
         String name;
-
         public Movie(String name) {
             this.name = name;
         }
@@ -63,7 +59,6 @@ public class FunctionDemo {
         public String getName() {
             return name;
         }
-
         public void setName(String name) {
             this.name = name;
         }

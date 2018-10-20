@@ -1,6 +1,5 @@
 package com.java8.demo.lambda.capturingLambda;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 /**
  * Created by udoluweera on 8/1/16.

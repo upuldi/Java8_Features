@@ -59,7 +59,6 @@ public class ConsumerDemo {
         public String getName() {
             return name;
         }
-
         public void setName(String name) {
             this.name = name;
         }
@@ -67,7 +66,6 @@ public class ConsumerDemo {
         public int getRating() {
             return rating;
         }
-
         public void setRating(int rating) {
             this.rating = rating;
         }
